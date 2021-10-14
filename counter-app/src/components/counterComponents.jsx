@@ -17,6 +17,9 @@ class Counter extends React.Component {
     //call the constructor of the parent class using the super keyword
   //this is method is called when this object "class Counter extends React.Component " is created
   //   console.log("constructor",this)
+    this.handleIncrement=this.handleIncrement.bind(this) //this bind method will return a new instance of the handleIncrement function ,
+    //and this in that function will reference to current counter object
+
 
 }*/
 /*
@@ -26,8 +29,12 @@ class Counter extends React.Component {
     return this.state.tags.map((tag) => <li key={tag}> tag</li>);
   }
 */
-  handleIncrement(){
-    console.log("Increment Clicked")
+  handleIncrement=()=>{
+    //arrow function don't rebind to this key word ,they inherited
+    //using an arrow function is cleaner and simpler adding a custom constructor and rebinding every event handler manually
+    console.log("Increment Clicked",this)
+    //obj.method();
+    //function();
   }
 
   render() {
