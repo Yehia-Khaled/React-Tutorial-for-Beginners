@@ -29,7 +29,7 @@ class Counter extends React.Component {
     return this.state.tags.map((tag) => <li key={tag}> tag</li>);
   }
 */
-  handleIncrement=()=>{
+  handleIncrement= (product) =>{
     //16- Binding Event Handlers
     //arrow function don't rebind to this key word ,they inherited
     //using an arrow function is cleaner and simpler adding a custom constructor and rebinding every event handler manually
@@ -38,8 +38,10 @@ class Counter extends React.Component {
     //function();
 
     //17- Updating the State
+    console.log(product)
     this.setState({ count:this.state.count +1})
   }
+
 
   render() {
     return (
@@ -47,7 +49,10 @@ class Counter extends React.Component {
                  {/*<img src={this.state.imageUrl} alt="" />*/}
          <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         {/*we didn't call this.handleIncrement() we paa a reference to it this.handleIncrement*/}
-        <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment </button>
+        <button
+            onClick={()=>this.handleIncrement(product)}
+            className="btn btn-secondary btn-sm"
+        >Increment </button>
 
        {/* {this.state.tags.length === 0 && "Please create a new tag!"}
         <ul>{this.renderTags()}</ul>*/}
