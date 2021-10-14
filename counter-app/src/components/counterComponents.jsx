@@ -3,9 +3,9 @@ import React, { Component } from "react";
 
 class Counter extends React.Component {
   state = {
-    count: 2,
+    count: 0,
     // imageUrl: "https://picsum.photos/200",
-    tags: ["tag1",'tag2','tag3','tag'],
+    // tags: ["tag1",'tag2','tag3','tag'],
   };
 
   // styles = {
@@ -30,11 +30,15 @@ class Counter extends React.Component {
   }
 */
   handleIncrement=()=>{
+    //16- Binding Event Handlers
     //arrow function don't rebind to this key word ,they inherited
     //using an arrow function is cleaner and simpler adding a custom constructor and rebinding every event handler manually
-    console.log("Increment Clicked",this)
+    // console.log("Increment Clicked",this)
     //obj.method();
     //function();
+
+    //17- Updating the State
+    this.setState({ count:this.state.count +1})
   }
 
   render() {
