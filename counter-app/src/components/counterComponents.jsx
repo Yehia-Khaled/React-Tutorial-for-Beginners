@@ -77,3 +77,8 @@ class Counter extends React.Component {
 }
 
 export default Counter;
+
+/*The difference between state and props
+* props: includes data that we gave to components, is read only ,can not change the input to this components inside of this components.
+* state :includes data that is local or private to that components,so other components can not access that state ,
+ it's completely internal to that components  */
