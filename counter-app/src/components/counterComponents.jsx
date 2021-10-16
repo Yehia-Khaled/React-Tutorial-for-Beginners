@@ -43,9 +43,10 @@ class Counter extends React.Component {
   };
 
   render() {
-    // console.log('props',this.props) test props
+    // console.log('props',this.props) //test props
     return (
       <div>
+        {/*{this.props.children}*/}
         {/*<img src={this.state.imageUrl} alt="" />*/}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         {/*we didn't call this.handleIncrement() we paa a reference to it this.handleIncrement*/}
