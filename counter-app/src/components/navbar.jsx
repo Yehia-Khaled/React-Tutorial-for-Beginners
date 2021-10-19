@@ -6,6 +6,9 @@ class NavBar extends React.Component {
       <nav className="navbar navbar-light bg-light">
           <a className="navbar-brand" href="#">
             Navbar
+          <span className="badge badge-bill badge-secondary">
+              {this.props.totalCounters}
+          </span>
           </a>
       </nav>
     );
