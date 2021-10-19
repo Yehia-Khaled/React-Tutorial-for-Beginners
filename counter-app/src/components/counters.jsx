@@ -15,10 +15,21 @@ class Counters extends React.Component {
     // console.log("Event handler called",counterId)
     const counters=this.state.counters.filter((c)=>(c.id !== counterId))
     this.setState({counters}) //as key value is the same at counters: counters we simplify to counters
-  }
+  };
+  handleReset=()=>{
+    const counters=this.state.counters.map((c)=>{
+      c.value=0;
+      return c;
+    })
+    this.setState({counters})
+  };
   render() {
     return (
       <div>
+        <button
+            className="btn btn-primary btn-sm m-2"
+            onClick={this.handleReset}
+        >Reset </button>
         {this.state.counters.map((counter) => (
           <Counter key={counter.id}  onDelete={this.handleDelete} counter={counter}/>
         /*<h4> Counter #{counter.id} </h4>
