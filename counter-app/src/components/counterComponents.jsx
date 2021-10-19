@@ -2,12 +2,12 @@
 import React, { Component } from "react";
 
 class Counter extends React.Component {
-  state = {
+  /*state = {
     value: this.props.counter.value,
     // imageUrl: "https://picsum.photos/200",
     // tags: ["tag1",'tag2','tag3','tag'],
   };
-
+*/
   // styles = {
   //   fontSize: 15,
   //   fontWeight: "bold",
@@ -29,7 +29,7 @@ class Counter extends React.Component {
     return this.state.tags.map((tag) => <li key={tag}> tag</li>);
   }
 */
-  handleIncrement = () => {
+/*  handleIncrement = () => {
     //16- Binding Event Handlers
     //arrow function don't rebind to this key word ,they inherited
     //using an arrow function is cleaner and simpler adding a custom constructor and rebinding every event handler manually
@@ -40,7 +40,7 @@ class Counter extends React.Component {
     //17- Updating the State
     // console.log(product)
     this.setState({ value: this.state.value + 1 });
-  };
+  };*/
 
   render() {
     // console.log('props',this.props) //test props
@@ -51,7 +51,7 @@ class Counter extends React.Component {
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         {/*we didn't call this.handleIncrement() we paa a reference to it this.handleIncrement*/}
         <button
-          onClick={this.handleIncrement} //()=>this.handleIncrement({id:1})
+          onClick={()=>this.props.onIncrement(this.props.counter)} //()=>this.handleIncrement({id:1})
           className="btn btn-secondary btn-sm"
         >
           Increment
@@ -70,13 +70,13 @@ class Counter extends React.Component {
   // 12- Rendering Classes Dynamically
   getBadgeClasses() {
     let classes = "badge  m-3 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.counter.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { value: count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.props.counter;
+    return value === 0 ? "Zero" : value;
   }
 }
 
