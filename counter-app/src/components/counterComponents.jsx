@@ -44,7 +44,9 @@ class Counter extends React.Component {
 
   render() {
     // console.log('props',this.props) //test props
-    return (
+      console.log('Counter - Rendered')
+
+      return (
       <div>
         {/*{this.props.children}*/}
         {/*<img src={this.state.imageUrl} alt="" />*/}

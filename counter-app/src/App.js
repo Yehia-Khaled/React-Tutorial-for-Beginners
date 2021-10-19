@@ -13,6 +13,19 @@ class App extends React.Component {
     ],
   };
 
+  constructor(props){ //constructor is called once it's a right place to initialize the property
+    super(props);
+    console.log('App- Constructor',this.props)
+  }
+
+  componentDidMount() {
+    //this method is called after a components is rendered into the dom,
+    // is perfect place to make Ajax calls to get date from the server
+    //set new data from server
+    // this.setState()
+    console.log('App- Mounted')
+  }
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters]; //... "spread operator"
     const index = counters.indexOf(counter);
@@ -38,6 +51,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log('App - Rendered')
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c=>c.value>0).length}/>
